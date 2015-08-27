@@ -42,7 +42,7 @@ namespace ZeroClip
                     listClips.Items.Remove(clipText);
                 }
                 
-				listClips.Items.Add(clipText);
+				listClips.Items.Insert(0, clipText);
 				oldClipText = clipText;
 			}
 		}
