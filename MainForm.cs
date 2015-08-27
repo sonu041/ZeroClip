@@ -29,6 +29,8 @@ namespace ZeroClip
 			timerClip.Start();
 			
 		}
+		
+		/* On timer tick copy the text from clipboard and show in list*/
 		void TimerClipTick(object sender, EventArgs e)
 		{	
 			clipText = Clipboard.GetText();
@@ -38,6 +40,8 @@ namespace ZeroClip
 				oldClipText = clipText;
 			}
 		}
+		
+		/* Double click on item to copy in clipboard. */
 		void ListClipsMouseDoubleClick(object sender, MouseEventArgs e)
 		{
 			string clipItemText = listClips.SelectedItem.ToString();
@@ -47,5 +51,19 @@ namespace ZeroClip
 			}
 	
 		}
+		
+		/* Delete the item from the list. */
+		void ListClipsKeyDown(object sender, KeyEventArgs e)
+		{
+			if(e.KeyCode == Keys.Delete)
+			{
+				for(int i=listClips.SelectedIndices.Count - 1; i>=0; i--)
+				{
+					listClips.Items.RemoveAt(listClips.SelectedIndices[i]);
+				}
+			}
+	
+		}
+		
 	}
 }

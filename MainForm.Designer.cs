@@ -47,8 +47,10 @@ namespace ZeroClip
 			this.listClips.FormattingEnabled = true;
 			this.listClips.Location = new System.Drawing.Point(0, 0);
 			this.listClips.Name = "listClips";
+			this.listClips.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
 			this.listClips.Size = new System.Drawing.Size(222, 329);
 			this.listClips.TabIndex = 0;
+			this.listClips.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ListClipsKeyDown);
 			this.listClips.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ListClipsMouseDoubleClick);
 			// 
 			// timerClip
