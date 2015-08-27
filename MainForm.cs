@@ -30,12 +30,18 @@ namespace ZeroClip
 			
 		}
 		
-		/* On timer tick copy the text from clipboard and show in list*/
+		/* On timer tick copy the text from clipboard and show in list. */
 		void TimerClipTick(object sender, EventArgs e)
 		{	
 			clipText = Clipboard.GetText();
 			if(clipText != "" && clipText != oldClipText)
 			{
+				//Remove duplicate clipText
+                if (listClips.Items.Contains(clipText))
+                {
+                    listClips.Items.Remove(clipText);
+                }
+                
 				listClips.Items.Add(clipText);
 				oldClipText = clipText;
 			}
@@ -49,7 +55,6 @@ namespace ZeroClip
 			{
 				Clipboard.SetText(clipItemText);
 			}
-	
 		}
 		
 		/* Delete the item from the list. */
@@ -62,8 +67,6 @@ namespace ZeroClip
 					listClips.Items.RemoveAt(listClips.SelectedIndices[i]);
 				}
 			}
-	
 		}
-		
 	}
 }
