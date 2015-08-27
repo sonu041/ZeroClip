@@ -38,6 +38,7 @@ namespace ZeroClip
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.listClips = new System.Windows.Forms.ListBox();
 			this.timerClip = new System.Windows.Forms.Timer(this.components);
 			this.SuspendLayout();
@@ -65,6 +66,7 @@ namespace ZeroClip
 			this.ClientSize = new System.Drawing.Size(221, 319);
 			this.Controls.Add(this.listClips);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "MainForm";
