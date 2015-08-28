@@ -68,5 +68,25 @@ namespace ZeroClip
 				}
 			}
 		}
+		void ShowTextToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			if (listClips.SelectedIndex != -1)
+			{
+				MessageBox.Show (listClips.SelectedItem.ToString(), "ZeroClip FullText",
+							MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+			}
+			else
+			{
+				MessageBox.Show ("Select an item first", "ZeroClip",
+							MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+			}
+	
+		}
+		void AboutToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			MessageBox.Show ("ZeroClip - Developed by Shuvankar Sarkar (shuvankar.com)", "Follow @sonu041 in twitter",
+							MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+	
+		}
 	}
 }
