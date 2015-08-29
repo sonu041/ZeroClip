@@ -81,10 +81,24 @@ namespace ZeroClip
 		}
 		void AboutToolStripMenuItemClick(object sender, EventArgs e)
 		{
-			MessageBox.Show ("ZeroClip - Developed by Shuvankar Sarkar (shuvankar.com)", "Follow @sonu041 in twitter",
+			string msg = "ZeroClip - Developed by Shuvankar Sarkar (shuvankar.com)\n"+
+				"For the sourceCode - https://github.com/sonu041/ZeroClip";
+			MessageBox.Show (msg, "Follow @sonu041 in twitter",
 							MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 	
 		}
+		
+		void HelpToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			string msg = "- Keyboard Shortcuts -\n\n"+
+				"'Delete' - Delete an item.\n"+
+				"'Enter' - Show Full text.\n"+
+				"'C'/Double click - Copy the text\n\n"+
+				"For more help/feedback visit shuvankar.com";
+			MessageBox.Show (msg, "Follow @sonu041 in twitter",
+							MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+		}
+		
 		
 		//TODO: Move the libraries region to separate file.
 		#region Libraries

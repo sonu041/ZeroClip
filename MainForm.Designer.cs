@@ -18,6 +18,7 @@ namespace ZeroClip
 		private System.Windows.Forms.ContextMenuStrip contextMenuStripClip;
 		private System.Windows.Forms.ToolStripMenuItem showTextToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -46,6 +47,7 @@ namespace ZeroClip
 			this.contextMenuStripClip = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.showTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.timerClip = new System.Windows.Forms.Timer(this.components);
 			this.contextMenuStripClip.SuspendLayout();
 			this.SuspendLayout();
@@ -66,23 +68,31 @@ namespace ZeroClip
 			// 
 			this.contextMenuStripClip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
 			this.showTextToolStripMenuItem,
-			this.aboutToolStripMenuItem});
+			this.aboutToolStripMenuItem,
+			this.helpToolStripMenuItem});
 			this.contextMenuStripClip.Name = "contextMenuStripClip";
-			this.contextMenuStripClip.Size = new System.Drawing.Size(126, 48);
+			this.contextMenuStripClip.Size = new System.Drawing.Size(153, 92);
 			// 
 			// showTextToolStripMenuItem
 			// 
 			this.showTextToolStripMenuItem.Name = "showTextToolStripMenuItem";
-			this.showTextToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+			this.showTextToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.showTextToolStripMenuItem.Text = "ShowText";
 			this.showTextToolStripMenuItem.Click += new System.EventHandler(this.ShowTextToolStripMenuItemClick);
 			// 
 			// aboutToolStripMenuItem
 			// 
 			this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.aboutToolStripMenuItem.Text = "About";
 			this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItemClick);
+			// 
+			// helpToolStripMenuItem
+			// 
+			this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+			this.helpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.helpToolStripMenuItem.Text = "Help";
+			this.helpToolStripMenuItem.Click += new System.EventHandler(this.HelpToolStripMenuItemClick);
 			// 
 			// timerClip
 			// 
