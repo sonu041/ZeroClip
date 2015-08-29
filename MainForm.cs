@@ -50,6 +50,57 @@ namespace ZeroClip
 		/* Double click on item to copy in clipboard. */
 		void ListClipsMouseDoubleClick(object sender, MouseEventArgs e)
 		{
+			CopyItem();
+		}
+		
+		/* Handle KeyPress Event. */
+		void ListClipsKeyDown(object sender, KeyEventArgs e)
+		{
+			// Press Delete - Delete the item from the list.
+			if(e.KeyCode == Keys.Delete)
+			{
+				DeleteItem(e);
+			}
+			
+			// Press Enter - Show full text.
+			if(e.KeyCode == Keys.Enter)
+			{
+				ShowFullText();
+			}
+			
+			// Press C - Copy item.
+			if(e.KeyCode == Keys.C)
+			{
+				CopyItem();
+			}
+			
+		}
+		void ShowTextToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			ShowFullText();
+		}
+		void AboutToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			MessageBox.Show ("ZeroClip - Developed by Shuvankar Sarkar (shuvankar.com)", "Follow @sonu041 in twitter",
+							MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+	
+		}
+		
+		//TODO: Move the libraries region to separate file.
+		#region Libraries
+		
+		/* Delete the item */
+		void DeleteItem(KeyEventArgs e)
+		{
+			for(int i=listClips.SelectedIndices.Count - 1; i>=0; i--)
+			{
+				listClips.Items.RemoveAt(listClips.SelectedIndices[i]);
+			}
+		}
+		
+		/* Copy the item to clipboard */
+		void CopyItem()
+		{
 			string clipItemText = listClips.SelectedItem.ToString();
 			if (clipItemText != "")
 			{
@@ -57,18 +108,8 @@ namespace ZeroClip
 			}
 		}
 		
-		/* Delete the item from the list. */
-		void ListClipsKeyDown(object sender, KeyEventArgs e)
-		{
-			if(e.KeyCode == Keys.Delete)
-			{
-				for(int i=listClips.SelectedIndices.Count - 1; i>=0; i--)
-				{
-					listClips.Items.RemoveAt(listClips.SelectedIndices[i]);
-				}
-			}
-		}
-		void ShowTextToolStripMenuItemClick(object sender, EventArgs e)
+		/* Show full text */
+		void ShowFullText()
 		{
 			if (listClips.SelectedIndex != -1)
 			{
@@ -80,13 +121,9 @@ namespace ZeroClip
 				MessageBox.Show ("Select an item first", "ZeroClip",
 							MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 			}
-	
 		}
-		void AboutToolStripMenuItemClick(object sender, EventArgs e)
-		{
-			MessageBox.Show ("ZeroClip - Developed by Shuvankar Sarkar (shuvankar.com)", "Follow @sonu041 in twitter",
-							MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-	
-		}
+		
+		#endregion
+		
 	}
 }
